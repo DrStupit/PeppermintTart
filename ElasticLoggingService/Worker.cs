@@ -18,15 +18,14 @@ namespace ElasticLoggingService
     {
         private readonly ILogger<Worker> _logger;
         private readonly ConsumerConfig _config;
-        private readonly IConfigurationRoot _configuration;
-        public Worker(ILogger<Worker> logger, IConfigurationRoot configuration)
+        private readonly IConfiguration _configuration;
+        public Worker(ILogger<Worker> logger, IConfiguration configuration)
         {
-            var kafka_uri = _configuration.GetSection("RPKKafka").GetSection("URI").Value;
             _logger = logger;
             _config = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092",
-                GroupId = "ElasticLoggingGroup",
+                BootstrapServers = configuration.GetSection("RPKKafka").GetSection("URI").Value,
+                GroupId = configuration.GetSection("RPKKafka").GetSection("demogroupid").Value,
                 AutoOffsetReset = AutoOffsetReset.Earliest,
                 EnableAutoCommit = true
             };
@@ -35,10 +34,9 @@ namespace ElasticLoggingService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var kafka_topic = _configuration.GetSection("RPKKafka").GetSection("topic").Value;
             using (var consumer = new ConsumerBuilder<Ignore, string>(_config).Build())
             {
-                consumer.Subscribe(kafka_topic);
+                consumer.Subscribe(_configuration.GetSection("RPKKafka").GetSection("topic").Value);
 
                 while (!stoppingToken.IsCancellationRequested)
                 {

@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[6.0.0-preview.5.21301.5, )"
             },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0-preview.5.21301.5, )"
+            },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[6.0.0-preview.5.21301.5, )"
