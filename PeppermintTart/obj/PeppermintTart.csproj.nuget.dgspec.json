@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/revthedev/Development/Net5/PeppermintTart/PeppermintTart.csproj": {}
+  },
+  "projects": {
+    "/home/revthedev/Development/Net5/PeppermintTart/PeppermintTart.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/revthedev/Development/Net5/PeppermintTart/PeppermintTart.csproj",
+        "projectName": "PeppermintTart",
+        "projectPath": "/home/revthedev/Development/Net5/PeppermintTart/PeppermintTart.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/home/revthedev/Development/Net5/PeppermintTart/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
