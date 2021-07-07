@@ -25,7 +25,7 @@ namespace ElasticLoggingService
             _config = new ConsumerConfig
             {
                 BootstrapServers = configuration.GetSection("RPKKafka").GetSection("URI").Value,
-                GroupId = configuration.GetSection("RPKKafka").GetSection("demogroupid").Value,
+                GroupId = "eslogginggroup",
                 AutoOffsetReset = AutoOffsetReset.Earliest,
                 EnableAutoCommit = true
             };
