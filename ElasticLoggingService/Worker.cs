@@ -27,7 +27,7 @@ namespace ElasticLoggingService
                 BootstrapServers = configuration.GetSection("RPKKafka").GetSection("URI").Value,
                 GroupId = "eslogginggroup",
                 AutoOffsetReset = AutoOffsetReset.Earliest,
-                EnableAutoCommit = true
+                EnableAutoCommit = false
             };
             _configuration = configuration;
         }
